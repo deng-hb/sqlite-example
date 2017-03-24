@@ -1,5 +1,7 @@
 package com.denghb.sqlite.example.controller;
 
+import com.denghb.dbhelper.paging.PagingResult;
+import com.denghb.sqlite.example.criteria.UserCriteria;
 import com.denghb.sqlite.example.domain.User;
 import com.denghb.sqlite.example.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,11 +36,15 @@ public class IndexController {
         user.setGrade(69.05);
         testService.create(user);
         return "Hello World";
-
     }
 
     @RequestMapping("/query/{id}")
     public User query(@PathVariable(name = "id", required = false) Long id) {
         return testService.query(id);
+    }
+
+    @RequestMapping("/list")
+    public PagingResult<User> list() {
+        return testService.list(new UserCriteria());
     }
 }

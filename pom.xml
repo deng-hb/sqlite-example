@@ -8,7 +8,7 @@
   <packaging>jar</packaging>
 
   <name>sqlite-example</name>
-  <url>http://maven.apache.org</url>
+  <url>https://denghb.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -47,4 +47,14 @@
     </dependency>
 
   </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+
 </project>
